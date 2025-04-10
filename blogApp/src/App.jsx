@@ -11,12 +11,12 @@ const dispatch = useDispatch()
 
 useEffect(()=>{
   authServices.getCurrentUser().then((userData)=>{
-    if(userData)
-    {
-      dispatch(login({ userDate: userData }))
-    }
-    else{
-       dispatch(logout())
+    if (userData) {
+      console.log("Dispatching login");
+      dispatch(login({ userDate: userData }));
+    } else {
+      console.log("Dispatching logout");
+      dispatch(logout());
     }
   }).finally(()=> setloading(false))
 },[])
