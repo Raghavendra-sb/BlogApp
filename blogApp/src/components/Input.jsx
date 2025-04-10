@@ -1,11 +1,13 @@
 import React, {useId} from 'react'
 
-const Input = React.forwardRef( function Input({
+
+const Input = React.forwardRef( function Input({//It lets the parent component pass a ref all the
+//  way down to the actual <input> element — not the <Input /> component wrapper.
     label,
     type = "text",
     className = "",
     ...props
-}, ref){
+}, ref){//ref lets parent components directly access this <input />. 
     const id = useId()
     return (
         <div className='w-full'>
